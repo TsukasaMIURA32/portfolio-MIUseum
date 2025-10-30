@@ -1,4 +1,14 @@
 <?php
+$url = parse_url(getenv("JAWSDB_MARIA_URL") ?: getenv("JAWSDB_URL") ?: '');
+
+if ($url) {
+    putenv("DB_CONNECTION=mysql");
+    putenv("DB_HOST=" . $url["host"]);
+    putenv("DB_PORT=" . ($url["port"] ?? 3306));
+    putenv("DB_DATABASE=" . ltrim($url["path"], "/"));
+    putenv("DB_USERNAME=" . $url["user"]);
+    putenv("DB_PASSWORD=" . ($url["pass"] ?? ''));
+}
 
 use Illuminate\Support\Str;
 

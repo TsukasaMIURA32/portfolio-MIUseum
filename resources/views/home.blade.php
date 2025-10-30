@@ -9,13 +9,13 @@
 
 
 @section('content')
-{{-- <div id="loading-screen" class="loading-screen">
+<div id="loading-screen" class="loading-screen">
     <img src="{{ asset('images/cloud.png') }}" alt="雲" class="anim-cloud">
     <img src="{{ asset('images/rocket.png') }}" alt="宇宙船" class="anim-spaceship">
     <img src="{{ asset('images/pink-star.png') }}" alt="星" class="anim-star pink">
     <img src="{{ asset('images/yellow-star.png') }}" alt="星" class="anim-star yellow">
     <img src="{{ asset('images/explore.png') }}" alt="explore" class="anim-explore">
-</div> --}}
+</div>
 <!-- ヒーロー -->
         <div class="container-fluid">     
             <!-- 雪（ドット）コンテナ -->

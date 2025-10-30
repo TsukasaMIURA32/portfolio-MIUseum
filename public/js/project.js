@@ -108,7 +108,7 @@ tagChips.forEach(chip => {
 const swiper = new Swiper(".mySwiper", {
     slidesPerView: 4,
     spaceBetween: 16,
-    loop: true,
+    loop: false,
     speed: 5000,
     freeMode: true,
     autoplay: {
