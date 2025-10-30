@@ -1,0 +1,87 @@
+.universe-container {
+    background: radial-gradient(circle at 20% 20%, #1d2030, #0a0a15);
+    color: #fff;
+    min-height: 100vh;
+    padding: 2rem 1rem 4rem;
+    overflow: hidden;
+  }
+  
+  /* === チャートとパネルの横並び === */
+.chart-wrapper {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap; /* ← 横が足りないときに自動で折り返す */
+    max-width: 100%; /* ← ビューポート幅超過を防ぐ */
+    margin: 0 auto;
+    gap: 2rem;
+    padding: 0 1rem; /* ← 端の余白を確保 */
+  }
+  
+  /* === チャートエリア === */
+  .chart-area {
+    flex: 1 1 400px;  /* 最小400px確保、広い時は伸びる */
+    max-width: 500px;
+    aspect-ratio: 1 / 1;
+  }
+  
+  /* === スキルパネル === */
+  .skill-panel {
+    flex: 1 1 400px;  /* チャートと同じくらいの扱いに */
+    max-width: 600px;
+    background: rgba(255, 255, 255, 0.08);
+    backdrop-filter: blur(10px);
+    border-radius: 20px;
+    padding: 2rem;
+    color: #ddd;
+    box-shadow: 0 0 30px rgba(255, 255, 255, 0.15);
+    transition: all 0.3s ease;
+  }
+  
+  /* === レスポンシブ調整 === */
+  @media (max-width: 768px) {
+    .chart-wrapper {
+      flex-direction: column;
+      align-items: center;
+      gap: 2rem;
+    }
+  
+    .chart-area,
+    .skill-panel {
+      width: 90%;
+      max-width: none;
+    }
+  }
+  
+  
+  /* タイトル */
+  .skill-panel h4 {
+    color: #ffd6a5;
+    margin-bottom: 10px;
+  }
+  
+  /* === レスポンシブ調整 === */
+  @media (max-width: 768px) {
+    .chart-wrapper {
+      flex-direction: column;
+      gap: 2rem;
+    }
+    .skill-panel {
+      width: 90%;
+      margin: 0 auto;
+    }
+  }
+
+  .chart-area {
+    position: relative;
+    width: 100%;
+    max-width: 500px;
+    aspect-ratio: 1 / 1;  /* 正方形を維持 */
+    margin: 0 auto;
+  }
+  #skillRadar {
+    width: 100% !important;
+    height: 100% !important;
+  }
+  
+  

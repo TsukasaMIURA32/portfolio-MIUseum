@@ -1,0 +1,388 @@
+body{
+    font-family: "Cascadia Code", "Hiragino Maru Gothic ProN", "Yu Gothic", sans-serif;
+    ;
+    font-weight: 400;
+    font-style: normal;
+    font-optical-sizing: auto;
+    /* font-weight: 200; */
+    font-style: normal;
+    font-size:  1rem;overflow-x: hidden;
+    display: flex;
+            flex-direction: column;
+            min-height: 100vh; /* 画面全体の高さを確保 */
+    background-color: #2C2E43;
+}
+
+
+footer {
+    margin-top: auto; /* 常に下に配置 */
+}
+
+.fs-small{
+    font-size: 0.8rem;
+}
+.fs-xsmall{
+    font-size: 0.6rem;
+}
+
+.border-pink{
+    border: solid 3px #FEB1AF;
+    border-radius: 7px;
+}
+
+/* ---------------FONT COLOR--------------- */
+.text-lgrey{
+    color: #D9D9D9;
+}
+
+.text-purple{
+    color: #BBB3DF;
+}
+
+.text-blue{
+    color:  #AAD2E8;
+}
+
+.text-green{
+    color: #8E978F;
+}
+
+.text-pink{
+    color:  #FEB1AF;
+}
+
+.text-magenta{
+    color: #EC3E70;
+}
+
+.text-yellow{
+    color:  #FFDD83;
+}
+
+.text-navy{
+    color: #2C2E43;
+}
+
+
+/* ---------------BACKGROUND--------------- */
+.bg-purple{
+    background-color: #BBB3DF;
+    min-height: 100vh;
+    width: 100vw;
+}
+
+.bg-blue{
+    background-color:  #AAD2E8;
+    min-height: 100vh;
+    width: 100vw;
+}
+
+.bg-green{
+    background-color: #B1DCC7;
+    min-height: 100vh;
+    width: 100vw;
+}
+
+.bg-pink{
+    background-color:  #FEB1AF;
+    min-height: 100vh;
+    /* width: 100vw; */
+}
+.bg-yellow{
+    background-color:  #FFDD83;
+    min-height: 100vh;
+    width: 100vw;
+}
+.bg-navy{
+    background-color: #1b1b29;
+    /* min-height: 100vh; */
+    width: 100vw;
+}
+
+.bg-white{
+    background-color: #f7f7f7;
+}
+.bg-lgrey{
+background-color: #D8D7DA;
+}
+/* ------------------------------ */
+/* .sticky-top {
+    top: 80px; /* ナビバーの高さ分だけ余白を取る（調整可） 
+  }
+  */
+  .bg-navbar{
+    background-color: #3e3954;
+}
+
+  .navbar-nav li{
+    font-size: 1rem;
+    border-right: 1px solid #484848;
+    border-left: 1px solid #484848;
+    width: 15vw;
+  }
+
+  .form-control-sm{
+    background-color: #f7f7f7;
+    height: min-content;
+  }
+
+/* ---------------IMAGE--------------- */
+.img-sm{
+    height:2rem;
+    width:2rem;
+    object-fit:cover;
+}
+
+.img-md{
+    height: 2rem;
+    width: auto;
+    object-fit:cover;
+}
+
+.img-xl{
+    width:80%;
+    object-fit:cover;
+    box-shadow: 10px 10px 0px #FFDD83;
+}
+
+.img-logo{
+    height: 6rem;
+    width: auto;
+    object-fit:cover;
+}
+
+.img-thumbnail{
+    width: 80px; 
+    height: 60px; 
+    object-fit: cover; 
+    cursor:pointer;
+}
+
+
+/* ---------------BUTTON--------------- */
+
+.btn-grey{
+    background-color: #D9D9D9;
+    font-weight: bold;
+    font-size: 1rem;
+    /* border: solid 2px #000000; */
+    transition: all .5s;
+    text-transform: uppercase;
+}
+
+.btn-grey:hover{
+    background-color: #787878;
+    border: solid 2px #ffffff;
+}
+
+.btn-pink{
+    background-color: #FEB1AF;
+    color: #414141;;
+    font-weight: bold;
+    font-size: 1rem;
+    border: solid 2px #7a7a7a;
+    transition: all .5s;
+    text-transform: uppercase;
+}
+
+
+
+
+
+.navbar {
+    background-color: #2C2E43;
+    /* z-index: 1030; */
+}
+
+.navbar-toggler{
+    color: white;
+}
+
+
+.footer-bg {
+    background-image: url('/images/footer-image.svg');
+    background-repeat: repeat-x;   /* 横方向にリピート */
+    background-position: bottom;   /* 下側に配置 */
+    background-size: 550px auto;   /* 高さを100pxに揃える（お好みで） */
+}
+
+.typing {
+    font-size: 2rem;
+    color: white;
+    white-space: nowrap;
+    overflow: hidden;
+    display: inline-block;
+    border-right: 3px solid #fff; /* カーソル */
+    animation: typing 2.5s steps(var(--steps), end) forwards 1.8s, blink 0.8s step-end infinite;
+    --steps: 24; /* ← 文字数（文字＋記号の合計）に合わせる */
+  }
+  
+  /* タイピングアニメーション */
+  @keyframes typing {
+    from {
+      width: 0ch;
+    }
+    to {
+      width: 24ch; /* ← 文字数ぶん調整 */
+    }
+  }
+  
+  /* カーソル点滅 */
+  @keyframes blink {
+    50% {
+      border-color: transparent;
+    }
+  }
+  
+  
+.number{
+    /* left: -45px;  */
+    /* top: 50%;  */
+    color: rgb(66, 66, 66);
+    height: 100vh;
+    overflow: hidden;           /* はみ出さないようにする */
+}
+
+.skill-tag {
+    /* display: inline-block; */
+    background: var(--accent-orange);
+    color: white;
+    padding: 5px 12px;
+    border-radius: 20px;
+    font-size: 12px;
+    margin: 2px;
+}
+
+.footer-info {
+    background: rgba(0, 0, 0, 0.2);
+    border-top: 1px solid rgba(255, 255, 255, 0.1);
+    padding: 20px 0;
+    margin-top: 50px;
+}
+
+@media (max-width: 768px) {
+    .nav-tabs {
+        flex-wrap: wrap;
+        gap: 5px;
+    }
+    
+    .project-grid {
+        grid-template-columns: 1fr;
+    }
+    
+    .profile-image {
+        width: 150px;
+        height: 150px;
+    }
+}
+
+.scan-lines {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    pointer-events: none;
+    overflow: hidden;
+  }
+  
+  /* 縦ライン共通 */
+  .v-line {
+    position: absolute;
+    top: -100%;
+    height: 200%;
+    background: linear-gradient(to bottom, transparent, rgba(255,255,255,0.6), transparent);
+    animation: verticalLine linear infinite;
+  }
+  
+  /* 横ライン共通 */
+  .h-line {
+    position: absolute;
+    left: -100%;
+    width: 200%;
+    background: linear-gradient(to right, transparent, rgba(255,255,255,0.6), transparent);
+    animation: horizontalLine linear infinite;
+  }
+  
+  /* 個別の太さ・位置・速度 */
+  /* .line1 { right: 10vw; width: 20px; animation-duration: 4s; background-color: #73B0E8;}
+  .line2 { right: 9%; width: 20px; animation-duration: 6s; background-color: #FEB1AF;}
+  .line3 { right: 8%; width: 20px; animation-duration: 8s; background-color: #FFDD83;} */
+  
+  .line4 { top: 74vh; height: 1vh; animation-duration: 5s; background-color: #73B0E8;}
+  .line5 { top: 75vh; height: 1vh; animation-duration: 7s; background-color: #FEB1AF;}
+  .line6 { top: 76vh; height: 1vh; animation-duration: 9s; background-color: #FFDD83;}
+  
+ /* アニメーション（ふわっと消える） */
+@keyframes verticalLine {
+    0%   { top: -100%; opacity: 0; }
+    10%  { opacity: 10%; }
+    80%  { opacity: 10%; }
+    100% { top: 100%; opacity: 0; }
+  }
+  
+  @keyframes horizontalLine {
+    0%   { left: -100%; opacity: 0; }
+    10%  { opacity: 8%; }
+    80%  { opacity: 8%; }
+    100% { left: 100%; opacity: 0; }
+  }
+
+  /* 雪コンテナ */
+.snow {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    pointer-events: none; /* クリックを邪魔しない */
+    background-image: radial-gradient(2px 2px at 10px 10px, white, transparent),
+                      radial-gradient(2px 2px at 50px 30px, white, transparent),
+                      radial-gradient(2px 2px at 130px 80px, white, transparent),
+                      radial-gradient(2px 2px at 200px 150px, white, transparent),
+                      radial-gradient(2px 2px at 250px 200px, white, transparent);
+    background-size: 300px 300px;
+    animation: snowFall 10s linear infinite;
+  }
+  
+  @keyframes snowFall {
+    0% { background-position: 0 0; }
+    100% { background-position: 0 300px; }
+  }
+  
+.img-down{
+    opacity: 20%;
+    width: 5vw;
+    animation: bounce 1s infinite ease-in-out;
+}
+
+@keyframes bounce {
+    0%, 100% {
+      transform: translateY(0);   /* 元の位置 */
+    }
+    50% {
+      transform: translateY(-10px); /* 上に移動 */
+    }
+  }
+
+  #section3 {
+    overflow-y: auto;
+  }
+
+  .img-chart{
+    height: auto;
+    width: 80%;
+  }
+  
+  .typing-wrapper {
+    display: block;
+    width: 100%;
+    background-color: transparent;
+  }
+  
+  .typing-wrapper:hover {
+    background-color: rgba(216, 125, 83, 0.2); /* オレンジっぽくフェード */
+    transition: background-color 0.4s ease;
+  }
+  
+  

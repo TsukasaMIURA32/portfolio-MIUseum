@@ -1,0 +1,97 @@
+.universe-container {
+    background: radial-gradient(circle at 20% 20%, #1d2030, #0a0a15);
+    color: #fff;
+    overflow-x: hidden;
+  }
+  
+  /* ===== タイムライン軸 ===== */
+  .space-timeline {
+    position: relative;
+    width: 100%;
+    margin: 0 auto;
+    padding: 4rem 0;
+  }
+  
+  .timeline-line {
+    position: absolute;
+    top: 0;
+    left: 50%;
+    width: 4px;
+    height: 100%;
+    background: linear-gradient(to bottom, #fff3, #ffd6f5, #fff3);
+    transform: translateX(-50%);
+  }
+  
+  /* ===== 各ステーション（惑星） ===== */
+  .timeline-item {
+    position: relative;
+    width: 50%;
+    padding: 2rem;
+  }
+  
+  .timeline-item.left {
+    left: 0;
+    text-align: right;
+  }
+  
+  .timeline-item.right {
+    left: 50%;
+    text-align: left;
+  }
+  
+  .planet-card {
+    position: relative;
+    display: inline-block;
+    background: rgba(255,255,255,0.08);
+    border-radius: 16px;
+    padding: 1.5rem;
+    max-width: 40vw;
+    box-shadow: 0 0 20px rgba(255,255,255,0.15);
+    transition: transform 0.3s;
+  }
+
+  /* === カードタイプ別カラー === */
+.career-card {
+    background: linear-gradient(135deg, rgba(79,195,247,0.2), rgba(179,229,252,0.1));
+    border-left: 4px solid #4fc3f7;
+    box-shadow: 0 0 15px rgba(79,195,247,0.3);
+  }
+  
+  .private-card {
+    background: linear-gradient(135deg, rgba(255,213,79,0.2), rgba(255,245,157,0.1));
+    border-left: 4px solid #ffd54f;
+    box-shadow: 0 0 15px rgba(255,213,79,0.3);
+  }
+  
+  
+  .planet-card:hover {
+    transform: scale(1.05);
+  }
+  
+  .planet-icon {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    position: absolute;
+    top: 20px;
+    right: -20px;
+    box-shadow: 0 0 20px currentColor;
+  }
+  
+  .planet-pink { background: linear-gradient(135deg, #f59ed6, #ffb6c1); color: #f59ed6; }
+  .planet-yellow { background: linear-gradient(135deg, #ffe28a, #ffd166); color: #ffe28a; }
+  .planet-blue { background: linear-gradient(135deg, #87cefa, #4da6ff); color: #87cefa; }
+  
+  /* ===== レスポンシブ ===== */
+  @media (max-width: 768px) {
+    .timeline-item, .timeline-item.left, .timeline-item.right {
+      width: 100%;
+      text-align: center;
+      left: 0;
+    }
+    .timeline-line { left: 5%; }
+    .planet-card {
+      margin: 0 auto 2rem;
+    }
+  }
+  

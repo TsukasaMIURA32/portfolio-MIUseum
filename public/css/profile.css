@@ -1,0 +1,139 @@
+/* //============================================= */
+:root {
+    --primary-bg: #2c3e50;
+    --secondary-bg: #34495e;
+    --accent-orange: #e67e22;
+    --accent-blue: #3498db;
+    --text-light: #ecf0f1;
+    --text-muted: #95a5a6;
+}
+
+
+.nav-tab:hover {
+    background: var(--accent-orange);
+    color: white;
+    transform: translateY(-2px);
+}
+
+.nav-tab.active {
+    background: var(--accent-blue);
+    color: white;
+}
+
+.terminal-window {
+    background: rgba(40, 44, 52, 0.95);
+    border-radius: 12px;
+    box-shadow: 0 20px 40px rgba(0,0,0,0.3);
+    overflow: hidden;
+    margin: 20px 0;
+}
+
+@media (max-width: 576px) {
+    .terminal-window {
+      margin: 10px 5px;
+    }
+  }
+  
+
+.terminal-header {
+    background: #21252b;
+    padding: 12px 16px;
+    display: flex;
+    gap: 8px;
+}
+
+.terminal-dot {
+    width: 12px;
+    height: 12px;
+    border-radius: 50%;
+}
+
+.dot-red { background: #ff5f56; }
+.dot-yellow { background: #ffbd2e; }
+.dot-green { background: #27ca3f; }
+
+
+.skill {
+    margin: 20px 0;
+  }
+
+  .label {
+    margin-bottom: 5px;
+    font-size: 14px;
+  }
+
+  .bar {
+    background: #333;
+    border-radius: 8px;
+    overflow: hidden;
+    height: 20px;
+  }
+
+  .progress {
+    height: 100%;
+    border-radius: 8px;
+    width: 0; /* 初期は0 */
+    transition: width 2s ease; /* ←JSでwidth指定した時にアニメ */
+  }
+
+
+  /* カラーごとにクラス */
+  .front { background: #AAD2E8; --level: 80%; }
+  .back { background: #BBB3DF; --level: 60%; }
+  .design { background: #FFDD83; --level: 40%; }
+  .office { background: #B1DCC7; --level: 80%; }
+  .english { background: #FEB1AF; --level: 100%; }
+
+.profile-card {
+    background: #f7f7f7;
+    backdrop-filter: blur(15px);
+    border-radius: 20px;
+    padding: 30px;
+    border: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+.profile-image {
+    width: 15vw;
+    height: auto;
+    object-fit: cover;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.3);
+  }
+  
+  @media (max-width: 576px) {
+    .profile-image {
+      width: 40vw;
+    }
+  }
+  
+
+#scroll-down{
+    cursor: pointer;
+}
+
+@media (max-width: 576px) {
+    .code-content {
+      font-size: 12px;
+      margin: 0 10px;
+    }
+    .label {
+      font-size: 12px;
+    }
+    .bar {
+      height: 15px;
+    }
+  }
+  .terminal-window {
+    cursor: pointer;
+    transition: box-shadow 0.3s ease, transform 0.3s ease;
+  }
+  
+  .terminal-window:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 0 15px rgba(255, 255, 255, 0.3);
+  }
+  
+  .terminal-open {
+    box-shadow: 0 0 25px rgba(255, 220, 100, 0.7);
+    transform: scale(1.02);
+  }
+  
