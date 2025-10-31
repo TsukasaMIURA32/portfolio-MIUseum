@@ -79,13 +79,13 @@
                        特にユーザーの使いやすさを考えながら、JavaScriptを駆使して制作しました。"
                        data-video="https://youtu.be/KqaOv0sHdXg">
                   <!-- 通常画像 -->
-                  <img src="{{ asset('images/hopquest.png') }}"
+                  <img src="{{ asset('images/HopQuest.png') }}"
                        class="img-thumbnail thumb-img"
                        data-sub-title="Laravel × MySQL × Google Maps API で構築した旅行SNSアプリ。"
                        data-content="投稿・フォロー・いいね・検索機能を備え、旅行者と店舗が情報を共有できるプラットフォームです。ユーザーは旅程やスポットを投稿し、他の旅人とつながることができます。ビジネスユーザーは店舗やイベントをPRすることも可能です。"
                        data-image="{{ asset('images/HopQuest.png') }}">
 
-                       <img src="{{ asset('images/hopquest-Logo.png') }}"
+                       <img src="{{ asset('images/HopQuest-Logo.png') }}"
                        class="img-thumbnail thumb-img"
                        data-sub-title="ロゴ等のデザインも担当しました。"
                        data-content="AIを活用しつつも、チームの意見を取り入れながら必ず自分で手を加え、オリジナリティが出せるよう意識しました。ロゴ等の製作は初めてだったため何通りも試し、チームに相談しながらの作業でしたが、とても良い経験になりました。"

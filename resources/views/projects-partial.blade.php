@@ -15,7 +15,7 @@ $projects = [
     [
         'id' => 1,
         'title' => 'HopQuest - 旅行SNSアプリ',
-        'main_image' => 'images/hopquest.png',
+        'main_image' => 'images/HopQuest.png',
         'tags' => [
             ['name' => 'HTML/CSS'],
             ['name' => 'JavaScript'],
