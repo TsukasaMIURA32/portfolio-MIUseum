@@ -1,33 +1,42 @@
 <?php
 
-use App\Http\Controllers\ProfileController;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\HomeController;
 use App\Http\Controllers\ProjectController;
 
-Route::get('/', [HomeController::class, 'index']);
-Route::get('/projects/{project}', [ProjectController::class, 'show'])->name('projects.show');
+/*
+|--------------------------------------------------------------------------
+| Web Routes
+|--------------------------------------------------------------------------
+| 静的ポートフォリオ用ルーティング
+|--------------------------------------------------------------------------
+*/
 
-Route::get('/dashboard', function () {
-    return view('dashboard');
-})->middleware(['auth', 'verified'])->name('dashboard');
+// 🪐 トップページ（Home）
+Route::get('/', [HomeController::class, 'index'])->name('home');
 
-Route::middleware('auth')->group(function () {
-    Route::get('/profile', [ProfileController::class, 'edit'])->name('profile.edit');
-    Route::patch('/profile', [ProfileController::class, 'update'])->name('profile.update');
-    Route::delete('/profile', [ProfileController::class, 'destroy'])->name('profile.destroy');
-});
+// 🚀 プロジェクト詳細ページ（静的配列から）
+Route::get('/projects/{id}', [ProjectController::class, 'show'])->name('projects.show');
 
-Route::post('/projects/{id}/like', [App\Http\Controllers\ProjectController::class, 'like'])->name('projects.like');
-
-Route::get('/projects/{project}/details', [ProjectController::class, 'details']);
-
+// 🎨 スキルギャラクシー（レーダーチャート）
 Route::get('/skilldetails', function () {
     return view('skilldetails');
-});
+})->name('skilldetails');
 
+// 🧭 成長ストーリー（タイムライン）
 Route::get('/profiledetails', function () {
     return view('profiledetails');
-});
+})->name('profiledetails');
 
-require __DIR__.'/auth.php';
+/*
+|--------------------------------------------------------------------------
+| 開発補助ルート（必要に応じて）
+|--------------------------------------------------------------------------
+*/
+
+// 💖 疑似いいね機能（Ajax用・DBなし）
+Route::post('/projects/{id}/like', [ProjectController::class, 'like'])->name('projects.like');
+
+// 📜 詳細データAPI（もしJSで呼ぶなら）
+Route::get('/projects/{id}/details', [ProjectController::class, 'details'])->name('projects.details');
+

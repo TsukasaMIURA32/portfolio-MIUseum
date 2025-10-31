@@ -1,144 +1,149 @@
-/* ローディング画面の背景 */
+/* ---------------------------
+ 🪐 ローディング全体
+---------------------------- */
+
+/* 背景 */
 .loading-screen {
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background-color: #2C2E43;
-    z-index: 9999;
-    overflow: hidden;
-    transition: opacity 1s ease, transform 1s ease; /* opacityとtransform両方にトランジション */
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: #2C2E43;
+  z-index: 9999;
+  overflow: hidden;
+  transition: opacity 0.6s ease; /* フェード時間短縮 */
 }
 
 .loading-screen.hide {
-    opacity: 0;              /* フェードアウト */
-}
-
-/* loading-screen 下半分の白背景用 */
-.loading-screen::after {
-  content: '';
-  position: absolute;
-  bottom: 0;
-  left: 0;
-  width: 100%;
-  height: 20%;       /* 下半分 */
-  background-color: #FFF8EF;
   opacity: 0;
-  transition: opacity 0.8s ease; /* 雲と同じくらいの時間 */
-  z-index: 0;        /* 雲より下に */
 }
 
-/* lg以下だけ */
+/* 下の白背景（モバイル用） */
+.loading-screen::after {
+content: '';
+position: absolute;
+bottom: 0;
+left: 0;
+width: 100%;
+height: 20%;
+background-color: #FFF8EF;
+opacity: 0;
+transition: opacity 0.5s ease;
+z-index: 0;
+}
+
 @media (max-width: 798px) {
-  .loading-screen::after {
-    opacity: 1;      /* 表示する */
-  }
+.loading-screen::after {
+  opacity: 1;
+}
 }
 
 
-
-/* 雲のアニメーション */
+/* ---------------------------
+☁️ 雲のアニメーション
+---------------------------- */
 .anim-cloud {
-  position: absolute;
-  width: 100vw;
-  bottom: 0;
-  left: 0;
-  opacity: 1;
-  transform: translateY(100%);
-  animation: cloud-rise 0.5s ease-out forwards;
+position: absolute;
+width: 100vw;
+bottom: 0;
+left: 0;
+opacity: 1;
+transform: translateY(100%);
+animation: cloud-rise 0.35s ease-out forwards; /* 0.5s → 0.35s */
 }
 
 @keyframes cloud-rise {
-  0%   { transform: translateY(100%); }
-  100% { transform: translateY(40%); }
+0%   { transform: translateY(100%); }
+100% { transform: translateY(40%); }
 }
 
-/* lg以下のとき */
+/* lg以下 */
 @media (max-width: 798px) {
-  @keyframes cloud-rise {
-      0%   { transform: translateY(100%); }
-      100% { transform: translateY(-60%); }
-  }
+@keyframes cloud-rise {
+    0%   { transform: translateY(100%); }
+    100% { transform: translateY(-60%); }
+}
 }
 
 
-/* explore画像用 */
+/* ---------------------------
+🌏 explore画像
+---------------------------- */
 .anim-explore {
-    position: absolute;
-    width: 40%;           /* 雲と同じ幅 */
-    bottom: 0;
-    left: 5vw;
-    z-index: 1;
-    transform: translateY(100%);
-    animation: explore-rise 0.2s ease-out forwards;
-    animation-delay: 0.1s;  /* 雲より0.1秒遅らせる */
+  position: absolute;
+  width: 40%;
+  bottom: 0;
+  left: 5vw;
+  z-index: 1;
+  transform: translateY(100%);
+  animation: explore-rise 0.25s ease-out forwards; /* 0.2s→0.25s */
+  animation-delay: 0.1s;
 }
 
 @keyframes explore-rise {
-    0% { transform: translateY(100%); opacity: 0; }
-    100% { transform: translateY(-100%); opacity: 1; }
+  0% { transform: translateY(100%); opacity: 0; }
+  100% { transform: translateY(-100%); opacity: 1; }
 }
 
-/* 星の共通アニメーション */
+
+/* ---------------------------
+✨ 星のアニメーション
+---------------------------- */
 .anim-star {
-    position: absolute;
-    width: 80%;
-    opacity: 0;
-    animation: star-appear 1.2s ease-out forwards;
+  position: absolute;
+  width: 80%;
+  opacity: 0;
+  animation: star-appear 0.8s ease-out forwards; /* 1.2s → 0.8s */
 }
 
-/* ピンクの星 */
 .anim-star.pink {
-    top: 10%;
-    right: -15%;            /* 右上あたり */
-    animation-delay: 0.2s; /* 少し遅れて出る */
+  top: 10%;
+  right: -15%;
+  animation-delay: 0.2s;
 }
 
-/* 黄色の星 */
 .anim-star.yellow {
-    top: 20%;
-    right: -35%;            /* ピンクより少し下 */
-    animation-delay: 0.5s; /* さらに遅れて出る */
+  top: 20%;
+  right: -35%;
+  animation-delay: 0.4s;
 }
 
-/* 画面幅768px以下(md以下) のとき */
 @media (max-width: 798px) {
-    .anim-star.pink {
-      top: 45%;   /* 元10% → 下に */
-      right: -10%;
-    }
-  
-    .anim-star.yellow {
-      top: 55%;   /* 元20% → さらに下に */
-      right: -50%;
-    }
-  }
-  
-
-/* 星の登場アニメーション */
-@keyframes star-appear {
-    0%   { transform: translate(50px, -50px) scale(0.5); }
-    60%  { transform: translate(0,0) scale(1.2); opacity: 1; } /* キラッ */
-    100% { transform: translate(0,0) scale(1); opacity: 1; }   /* 定位置 */
+.anim-star.pink {
+  top: 45%;
+  right: -10%;
+}
+.anim-star.yellow {
+  top: 55%;
+  right: -50%;
+}
 }
 
-/* 宇宙船 */
+@keyframes star-appear {
+  0%   { transform: translate(50px, -50px) scale(0.5); }
+  60%  { transform: translate(0,0) scale(1.15); opacity: 1; }
+  100% { transform: translate(0,0) scale(1); opacity: 1; }
+}
+
+
+/* ---------------------------
+🚀 宇宙船（ロケット）
+---------------------------- */
 .anim-spaceship {
-    position: absolute;
-    bottom: -100px; /* 画面外スタート */
-    left: 25%;      /* 中央に配置 */
-    transform: translateX(-50%);
-    width: 22%;
-    animation: rocketUp 2s ease-out forwards;
+  position: absolute;
+  bottom: -80px; /* 少し近く */
+  left: 25%;
+  transform: translateX(-50%);
+  width: 22%;
+  animation: rocketUp 1.2s ease-out forwards; /* 2s → 1.2s */
+}
+
+@keyframes rocketUp {
+  0% {
+    transform: translate(-50%, 0) scale(1.1);
   }
-  
-  @keyframes rocketUp {
-    0% {
-      transform: translate(-50%, 0) scale(1.2);
-    }
-    100% {
-      transform: translate(-50%, -100vh) scale(0.4); /* 画面の上まで */
-    }
+  100% {
+    transform: translate(-50%, -100vh) scale(0.4);
   }
-  
+}

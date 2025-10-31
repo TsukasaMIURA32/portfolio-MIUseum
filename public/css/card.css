@@ -1,38 +1,35 @@
 
-.card-wrapp{
+.card-wrapper{
     position: relative;
     display: inline-block;
 }
 
 /* タブ */
-.card-tab {
-    position: absolute;
-    top: -10px; /* カードの上に飛び出す */
-    left: 0;
-    width: 150px;
-    height: 80px;
-    background: #AAD2E8;
-    border-radius: 5px 5px 0 0;
-    box-shadow: 0 2px 4px rgba(0,0,0,0.2);
-
-    /* 右上斜めカット */
-    clip-path: polygon(
-        0 0,        /* 左上 */
-        calc(100% - 20px) 0,  /* 右上カット開始 */
-        100% 20px,  /* 右上カット終了 */
-        100% 100%,  /* 右下 */
-        0 100%      /* 左下 */
-    );
-}
-
-
-/* カード本体 */
 .card {
-    border: 5px solid #AAD2E8;
-    border-radius: 0px 10px 10px 10px;
-    background: #f7f7f7;
-    overflow: hidden; /* 内容だけ制限 */
+  position: relative;
+  z-index: 1;
+  border: solid 5px #AAD2E8;
 }
+
+.card-tab {
+  position: absolute;
+  top: -25px; /* 少し上に飛び出す */
+  left: -5px;
+  width: 150px;
+  height: 50px;
+  background: #AAD2E8;
+  border-radius: 5px 5px 0 0;
+  box-shadow: 0 2px 4px rgba(0,0,0,0.2);
+  clip-path: polygon(0 0, calc(100% - 20px) 0, 100% 20px, 100% 100%, 0 100%);
+  z-index: -1; /* カードより前 */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #fff;
+  font-weight: 600;
+  border: solid 10px #AAD2E8;
+}
+
 
 .card img {
   width: 100%;
@@ -42,26 +39,24 @@
 }
 
 .tag-chip {
-    font-size: 0.8rem;
-    background-color: #f7f7f7;
-    cursor: pointer;
-    transition: all 0.3s;
+  font-size: 0.8rem;
+  line-height: 1.2rem;  /* 高さを固定 */
+  padding: 2px 8px;     /* 一定にしておく */
+  border-radius: 20px;  /* 丸みを統一 */
+  display: inline-block;
 }
+
+.tag-chip.active {
+  color: white;
+  background-color: #FFB6C1; /* カテゴリー色はJSで上書きされる */
+  transform: translateY(-2px); /* 少し浮くアニメだけ */
+}
+
 
 .tag-chip:hover {
     background-color: #e0e0e0;
     transform: translateY(-2px);
 }
-
-.tag-chip.active {
-    color: white;
-}
-/* .project-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-    gap: 20px;
-    margin: 20px 0;
-} */
 
 .project-card {
     backdrop-filter: blur(10px);
@@ -95,6 +90,7 @@
 
   .swiper-slide {
     box-sizing: border-box;
+    padding-top: 40px; /* タブ分の余白 */
   }
   /* .card-wrapper {
     
@@ -109,10 +105,39 @@
     100% { color: inherit; transform: scale(1); }
 }
 
-.like-flash {
-    animation: like-flash 0.6s ease-in-out;
+/* Swiper のオーバーフロー解除 */
+.swiper,
+.swiper-wrapper,
+.swiper-slide {
+  overflow: visible !important;
 }
 
+
+.thumb-img {
+  cursor: pointer;
+  transition: 0.3s ease;
+}
+.thumb-img:hover {
+  opacity: 0.8;
+  transform: scale(1.02);
+}
+.active-thumb {
+  border: 2px solid #ff99cc; /* ピンク系で枠を強調 */
+  opacity: 1 !important;
+}
+/* ▼ サムネ全体を「相対位置」にしておく */
+.thumb-video {
+  position: relative;
+  overflow: hidden;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+/* ▼ ホバー時にちょっと明るく */
+.thumb-video:hover {
+  opacity: 0.8;
+  transform: scale(1.02);
+}
 
 
 
