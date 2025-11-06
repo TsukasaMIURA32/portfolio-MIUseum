@@ -3,12 +3,10 @@
 <html lang="ja">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="viewport" content="width=375, initial-scale=1.0, maximum-scale=1.0">
     <title>Portfolio - Tsukasa Miura</title>
     <!-- FontAwesome -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css"
-        integrity="sha512-Evv84Mr4kqVGRNSgIGL/F/aIDqQb7xQ2vcrdIwxfjThSH8CSR7PBEakCr51Ck+w+/U6swU2Im1vVX0SVk9ABhg=="
-        crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <script src="https://kit.fontawesome.com/61c51be218.js" crossorigin="anonymous"></script>
 
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
     <link rel="stylesheet" href="{{ asset('css/style.css') }}">
@@ -37,11 +35,31 @@
             </button>
             <div class="collapse navbar-collapse align-items-center" id="navbarNav">
                 <ul class="navbar-nav fs-4 pe-0">
-                    <li class="nav-item px-3"><a class="nav-link text-lgrey" href="#profile"><i class="fa-solid fa-address-card me-2 text-pink"></i>PROFILE</a></li>
-                    <li class="nav-item px-3"><a class="nav-link text-lgrey" href="#works"><i class="fa-solid fa-file-zipper me-2 text-blue"></i>WORKS</a></li>
-                    <li class="nav-item px-3"><a class="nav-link text-lgrey" href="#blog"><i class="fa-solid fa-book me-2 text-purple"></i>note</a></li>
-                    <li class="nav-item px-3 text-green"><a class="nav-link text-lgrey" href="#contact"><i class="fa-solid fa-envelope me-2 text-yellow"></i>CONTACT</a></li>
+                    <li class="nav-item px-3">
+                        <a class="nav-link text-lgrey" href="#section2">
+                            <i class="fa-solid fa-address-card me-2 text-pink"></i>PROFILE
+                        </a>
+                    </li>
+                
+                    <li class="nav-item px-3">
+                        <a class="nav-link text-lgrey" href="#section3">
+                            <i class="fa-solid fa-file-zipper me-2 text-blue"></i>WORKS
+                        </a>
+                    </li>
+                
+                    <li class="nav-item px-3">
+                        <a class="nav-link text-lgrey" href="https://note.com/tsukasa_mi302" target="_blank">
+                            <i class="fa-solid fa-book me-2 text-purple"></i>note
+                        </a>
+                    </li>
+                
+                    <li class="nav-item px-3">
+                        <a class="nav-link text-lgrey" href="#section4">
+                            <i class="fa-solid fa-envelope me-2 text-yellow"></i>CONTACT
+                        </a>
+                    </li>
                 </ul>
+                
                 <div class="collapse navbar-collapse justify-content-between" id="navbarSupportedContent">
                     {{-- Search bar here --}}
                     <ul class="navbar-nav mx-auto me-0">

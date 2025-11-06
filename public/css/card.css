@@ -1,145 +1,205 @@
-
-.card-wrapper{
-    position: relative;
-    display: inline-block;
-}
-
-/* タブ */
-.card {
-  position: relative;
-  z-index: 1;
-  border: solid 5px #AAD2E8;
-}
-
-.card-tab {
-  position: absolute;
-  top: -25px; /* 少し上に飛び出す */
-  left: -5px;
-  width: 150px;
-  height: 50px;
-  background: #AAD2E8;
-  border-radius: 5px 5px 0 0;
-  box-shadow: 0 2px 4px rgba(0,0,0,0.2);
-  clip-path: polygon(0 0, calc(100% - 20px) 0, 100% 20px, 100% 100%, 0 100%);
-  z-index: -1; /* カードより前 */
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  color: #fff;
-  font-weight: 600;
-  border: solid 10px #AAD2E8;
-}
-
-
-.card img {
-  width: 100%;
-  height: 260px; /* 統一したい高さに変更 */
-  object-fit: cover; /* トリミングして枠いっぱいに */
-  border-bottom: 1px solid #ddd;
-}
-
-.tag-chip {
-  font-size: 0.8rem;
-  line-height: 1.2rem;  /* 高さを固定 */
-  padding: 2px 8px;     /* 一定にしておく */
-  border-radius: 20px;  /* 丸みを統一 */
-  display: inline-block;
-}
-
-.tag-chip.active {
-  color: white;
-  background-color: #FFB6C1; /* カテゴリー色はJSで上書きされる */
-  transform: translateY(-2px); /* 少し浮くアニメだけ */
-}
-
-
-.tag-chip:hover {
-    background-color: #e0e0e0;
-    transform: translateY(-2px);
-}
-
-.project-card {
-    backdrop-filter: blur(10px);
-    border-radius: 15px;
-    /* overflow: hidden; */
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
-}
-
-.project-card:hover {
+/* ===============================
+   CARD & WRAPPER
+   =============================== */
+   .card-wrapper{ 
+    position: relative; 
+    display: inline-block; 
+  }
+  
+  .card-wrapper:hover {
     transform: translateY(-10px);
-    box-shadow: 0 20px 40px rgba(0,0,0,0.4);
-}
-
-@keyframes bounceThumb {
-    0%, 100% {
-      transform: translateY(0);
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.4);
+  }
+  
+  /* ===============================
+     CARD DESIGN
+     =============================== */
+     .card { 
+      position: relative; 
+      z-index: 1; 
+      border: solid 5px #AAD2E8; 
     }
-    50% {
-      transform: translateY(-5px);
+  
+  /* タブ部分（カード上部の出っ張り） */
+  .card-tab { position: absolute; top: -25px; /* 少し上に飛び出す */ 
+    left: -5px; 
+    width: 150px; 
+    height: 50px; 
+    background: #AAD2E8; 
+    border-radius: 5px 5px 0 0; 
+    box-shadow: 0 2px 4px rgba(0,0,0,0.2); 
+    clip-path: polygon(0 0, calc(100% - 20px) 0, 100% 20px, 100% 100%, 0 100%); 
+    z-index: -1; /* カードより前 */ 
+    display: flex; 
+    align-items: center; 
+    justify-content: center; 
+    color: #fff; 
+    font-weight: 600; 
+    border: solid 10px #AAD2E8; 
+  }
+  
+  /* カード内画像 */
+  .card img {
+    width: 100%;
+    height: 260px;
+    object-fit: cover;
+    border-bottom: 1px solid #ddd;
+  }
+  @media (max-width: 768px) {
+    
+    .card { 
+      height: 30vh;
+      /* width: 80vw; */
+      margin: 0;
     }
   }
   
-  .like-button i, .like-button-modal i {
-    display: inline-block;
-    animation: bounceThumb 1s infinite ease-in-out;
-  }
-
-.swiper {
-    width: 90%;
-  }
-
-  .swiper-slide {
-    box-sizing: border-box;
-    padding-top: 40px; /* タブ分の余白 */
-  }
-  /* .card-wrapper {
+  /* ===============================
+     TAG CHIP
+     =============================== */
+    /* transition時に高さを変えないため line-heightを固定 */
+    .tag-chip {
+      line-height: 1.5;
+      height: 1.5em;
+    }
     
-    width: 100%;
-  } */
+    .tag-chip {
+      font-size: 0.8rem;
+      line-height: 1.2rem;
+      padding: 4px 10px;          /* ← 内側の高さを固定 */
+      border-radius: 20px;
+      display: inline-flex;        /* ← inline-blockより安定する */
+      align-items: center;         /* ← 縦中央揃え */
+      justify-content: center;
+      height: 28px;                /* ✅ 高さを固定 */
+      transition: background-color 0.2s ease, box-shadow 0.2s ease;
+      background-color: #fff;
+      cursor: pointer;
+      border: 3px solid transparent; 
+    }
+    
+    .active {
+      border: solid 3px  #BBB3DF;
+      line-height: 1.5;
+    }
+    
+    .tag-chip:hover {
+      color: #FEB1AF;
+      background-color: #e0e0e0;
+    }
 
-  @keyframes like-flash {
-    0%   { color: inherit; transform: scale(1); }
-    25%  { color: #FFD700; transform: scale(1.3); }
-    50%  { color: inherit; transform: scale(1); }
-    75%  { color: #FFD700; transform: scale(1.3); }
-    100% { color: inherit; transform: scale(1); }
-}
+    #tag-filter {
+      display: block !important; /* ← flexを外す */
+    }
+    
+    #tag-filter > div {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+    }
 
-/* Swiper のオーバーフロー解除 */
-.swiper,
-.swiper-wrapper,
+
+    @media (max-width: 767.98px) {
+      #tag-filter {
+        display: none !important;
+      }
+    }
+    
+  /* ===============================
+     PROJECT CARD EFFECTS
+     =============================== */
+  .project-card {
+    backdrop-filter: blur(10px);
+    border-radius: 15px;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+  }
+  
+  /* ===============================
+     SWIPER CORE LAYOUT
+     =============================== */
+     .swiper {
+      width: 100%vw;             /* 👈 全体幅を調整（80〜90%くらいが自然） */
+      margin: 0 auto;         /* 👈 中央寄せ */
+      padding: 0;             /* 👈 必要なら左右パディングを削除 */
+      display: flex;
+      justify-content: center; /* 👈 Swiper自体が中央に来るように */
+    }
+    
+  @media (max-width: 768px) {
+    
+    .swiper {
+      width: 100%;
+      margin: 0 auto;
+      padding: 0; /* ✅ 両端に余白（見た目に余裕） */
+    }
+  }
+
+  .swiper::-webkit-scrollbar {
+    display: none; /* Safari/Chrome系で非表示 */
+  }
+  .swiper {
+    scrollbar-width: none; /* Firefox用 */
+  }
+  
+  .mySwiper {
+    justify-content: center !important;
+  }
+
+  
+  .swiper-pagination {
+    display: none !important;
+  }
+
+  .swiper-wrapper {
+    display: flex;
+    align-items: stretch;
+    /* justify-content: center; ✅ 全体を中央寄せ */
+    gap: 0; /* ✅ カード間を均等に（JSのspaceBetweenと整合） */
+  }
+  
 .swiper-slide {
-  overflow: visible !important;
+  width: 90%;
+  display: flex;
+  justify-content: center;  /* ✅ 横方向に中央寄せ */
+  text-align: center;       /* ✅ テキストも中央に */
 }
 
-
-.thumb-img {
-  cursor: pointer;
-  transition: 0.3s ease;
-}
-.thumb-img:hover {
-  opacity: 0.8;
-  transform: scale(1.02);
-}
-.active-thumb {
-  border: 2px solid #ff99cc; /* ピンク系で枠を強調 */
-  opacity: 1 !important;
-}
-/* ▼ サムネ全体を「相対位置」にしておく */
-.thumb-video {
-  position: relative;
-  overflow: hidden;
-  cursor: pointer;
-  transition: 0.3s;
-}
-
-/* ▼ ホバー時にちょっと明るく */
-.thumb-video:hover {
-  opacity: 0.8;
-  transform: scale(1.02);
-}
-
-
-
-
-
+  
+  /* Swiper全体のオーバーフロー解除（モーダル時に影などが切れない） */
+  .swiper,
+  .swiper-wrapper,
+  .swiper-slide {
+    overflow: visible !important;
+  }
+  
+  /* ===============================
+     THUMBNAIL (モーダル用)
+     =============================== */
+  .thumb-img {
+    cursor: pointer;
+    transition: 0.3s ease;
+  }
+  
+  .thumb-img:hover {
+    opacity: 0.8;
+    transform: scale(1.02);
+  }
+  
+  .active-thumb {
+    border: 2px solid #ff99cc;
+    opacity: 1 !important;
+  }
+  
+  /* 動画サムネ */
+  .thumb-video {
+    position: relative;
+    overflow: hidden;
+    cursor: pointer;
+    transition: 0.3s;
+  }
+  
+  .thumb-video:hover {
+    opacity: 0.8;
+    transform: scale(1.02);
+  }
+  

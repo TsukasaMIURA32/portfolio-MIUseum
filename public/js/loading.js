@@ -1,10 +1,10 @@
 window.addEventListener('load', () => {
     const loader = document.getElementById('loading-screen');
 
-    // 2秒後にフェードアウト開始
+    // 0.5秒後にフェードアウト開始
     setTimeout(() => {
         loader.classList.add('hide');
-    }, 1000);
+    }, 500);
 
     // アニメーション終了後に非表示にする
     loader.addEventListener('transitionend', () => {

@@ -30,6 +30,7 @@ footer {
     border-radius: 7px;
 }
 
+
 /* ---------------FONT COLOR--------------- */
 .text-lgrey{
     color: #D9D9D9;
@@ -65,34 +66,7 @@ footer {
 
 
 /* ---------------BACKGROUND--------------- */
-.bg-purple{
-    background-color: #BBB3DF;
-    min-height: 100vh;
-    width: 100vw;
-}
 
-.bg-blue{
-    background-color:  #AAD2E8;
-    min-height: 100vh;
-    width: 100vw;
-}
-
-.bg-green{
-    background-color: #B1DCC7;
-    min-height: 100vh;
-    width: 100vw;
-}
-
-.bg-pink{
-    background-color:  #FEB1AF;
-    min-height: 100vh;
-    /* width: 100vw; */
-}
-.bg-yellow{
-    background-color:  #FFDD83;
-    min-height: 100vh;
-    width: 100vw;
-}
 .bg-navy{
     background-color: #1b1b29;
     /* min-height: 100vh; */
@@ -207,15 +181,15 @@ background-color: #D8D7DA;
 }
 
 .typing {
-    font-size: 2rem;
-    color: white;
-    white-space: nowrap;
-    overflow: hidden;
-    display: inline-block;
-    border-right: 3px solid #fff; /* カーソル */
-    animation: typing 2.5s steps(var(--steps), end) forwards 1.8s, blink 0.8s step-end infinite;
-    --steps: 24; /* ← 文字数（文字＋記号の合計）に合わせる */
-  }
+  font-size: clamp(1.2rem, 5vw, 2.5rem);
+  color: white;
+  white-space: nowrap;
+  overflow: hidden;
+  display: inline-block;
+  border-right: 3px solid #fff; /* カーソル */
+  animation: typing 2.5s steps(var(--steps), end) forwards 1.8s, blink 0.8s step-end infinite;
+  --steps: 24;
+}
   
   /* タイピングアニメーション */
   @keyframes typing {
@@ -385,4 +359,17 @@ background-color: #D8D7DA;
     transition: background-color 0.4s ease;
   }
   
+  html {
+    scroll-behavior: smooth;
+  }
+
+  html, body {
+    overflow-x: hidden !important;
+  }
   
+  @media (max-width: 375px) {
+    body {
+      width: 375px;
+      margin: 0 auto;
+    }
+  }

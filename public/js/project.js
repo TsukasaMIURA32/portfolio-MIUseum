@@ -9,13 +9,13 @@ document.addEventListener('DOMContentLoaded', () => {
             if (!parentGallery) return;
 
             const mainContainer = parentGallery.querySelector('.main-image');
-            const introContainer = parentGallery.closest('.modal-body').querySelector('.project-introduction');
+            const introContainer = parentGallery.closest('.modal-body')?.querySelector('.project-introduction');
 
             // アクティブ枠更新
             parentGallery.querySelectorAll('.thumb-img').forEach(t => t.classList.remove('active-thumb'));
             this.classList.add('active-thumb');
 
-            // 内容切り替え
+            // 内容切り替え（動画 or 画像）
             if (this.dataset.video) {
                 const videoId = this.dataset.video.includes('youtu.be')
                     ? this.dataset.video.split('/')[3]
@@ -44,61 +44,78 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     });
 
+// =====================================
+// 🏷 タグフィルター機能（単一選択モード）
+// =====================================
+const tagChips = document.querySelectorAll('.tag-chip');
+const projectCards = document.querySelectorAll('.card-wrapper');
 
-    // =====================================
-    // 🏷 タグフィルター機能
-    // =====================================
-    const tagChips = document.querySelectorAll('.tag-chip');
-    const projectCards = document.querySelectorAll('.card-wrapper');
+tagChips.forEach(chip => {
+    chip.addEventListener('click', () => {
+        const selectedTag = chip.textContent.trim();
+        const isAlreadyActive = chip.classList.contains('active');
 
-    tagChips.forEach(chip => {
-        chip.addEventListener('click', () => {
-            const selectedTag = chip.textContent.trim();
-            const isActive = chip.classList.toggle('active');
+        // ✅ 全チップの active を外す
+        tagChips.forEach(c => c.classList.remove('active'));
 
-            // 見た目リセット
-            tagChips.forEach(c => c.classList.remove('bg-pink', 'text-white'));
-            if (isActive) chip.classList.add('bg-pink', 'text-white');
-
+        // ✅ 同じチップをもう一度押した場合 → 全件表示
+        if (isAlreadyActive) {
             projectCards.forEach(card => {
-                const tagTexts = Array.from(card.querySelectorAll('.badge')).map(b => b.textContent.trim());
-                if (isActive && tagTexts.includes(selectedTag)) {
-                    card.parentElement.style.display = '';
-                } else if (!isActive) {
-                    card.parentElement.style.display = '';
-                } else {
-                    card.parentElement.style.display = 'none';
-                }
+                card.parentElement.style.display = '';
             });
+            return;
+        }
+
+        // ✅ 押されたチップだけ active に
+        chip.classList.add('active');
+
+        // ✅ 表示切替
+        projectCards.forEach(card => {
+            const tagTexts = Array.from(card.querySelectorAll('.badge')).map(b => b.textContent.trim());
+            const match = tagTexts.includes(selectedTag);
+            card.parentElement.style.display = match ? '' : 'none';
         });
     });
+});
 
-    // ダブルクリックでリセット
-    document.getElementById('tag-filter').addEventListener('dblclick', () => {
-        tagChips.forEach(c => c.classList.remove('active', 'bg-pink', 'text-white'));
+// ✅ ダブルクリックでリセット
+const tagFilter = document.getElementById('tag-filter');
+if (tagFilter) {
+    tagFilter.addEventListener('dblclick', () => {
+        tagChips.forEach(c => c.classList.remove('active'));
         projectCards.forEach(p => p.parentElement.style.display = '');
     });
-
+}
 
     // =====================================
-    // 🌀 Swiper 初期化
+    // 🌀 Swiper 初期化（4→3→2→1枚切り替え）
     // =====================================
     const swiper = new Swiper(".mySwiper", {
-        slidesPerView: 4,
-        spaceBetween: 16,
-        loop: false,
-        freeMode: true,
-        speed: 5000,
+        slidesPerView: 3,       
+        slidesPerGroup: 1,
+        spaceBetween: 24, // ✅ これが gap 代わりになる
+        loop: true,
+        centeredSlides: false,
+        speed: 1500,
         autoplay: {
-            delay: 0,
-            disableOnInteraction: false,
+          delay: 2500,
+          disableOnInteraction: false,
         },
+        pagination: {
+            el: ".swiper-pagination",
+            enabled: false,   // ✅ これで完全オフ
+          },
+          scrollbar: {
+            el: ".swiper-scrollbar",
+            hide: true,  // ✅ 非表示
+          },
         breakpoints: {
-            992: { slidesPerView: 4 },
-            768: { slidesPerView: 2 },
-            0: { slidesPerView: 1 }
-        }
-    });
+          1200: { slidesPerView: 3,spaceBetween: 24},
+          768:  { slidesPerView: 2,spaceBetween: 16},
+          0:    { slidesPerView: 1,spaceBetween: 12}, // ✅ 少し見切れ演出
+        },
+      });
+      
 
     // モーダル閉じたら再開
     document.querySelectorAll('.modal').forEach(modalEl => {

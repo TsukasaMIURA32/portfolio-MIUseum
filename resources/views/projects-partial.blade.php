@@ -22,7 +22,6 @@ $projects = [
             ['name' => 'PHP/Laravel'],
             ['name' => 'MySQL'],
             ['name' => 'Figma'],
-            ['name' => 'GitHub'],
             ['name' => 'Team Project']
         ],
         'youtube' => 'https://www.youtube.com/embed/XXXXXXXXXXX',
@@ -59,18 +58,21 @@ $projects = [
 <div class="container-fluid">
     <div class="row">
         <!-- タグチップ -->
-        <div id="tag-filter" class="mb-4 d-flex flex-wrap gap-2 px-2">
-            <p class="small text-white mb-0 text-start">カテゴリーを選択するとプロジェクトを絞り込みます</p>
+        <div id="tag-filter" class="mb-4 d-none d-md-flex flex-wrap gap-2 px-2">
+            <p class="small text-white mb-0 text-start">
+              カテゴリーを選択するとプロジェクトを絞り込みます
+            </p>
+          
             <div class="d-flex flex-wrap gap-2 w-100">
-                @foreach($tags as $tag)
-                    <span class="tag-chip bg-white rounded-5 px-2 py-0" data-category-id="{{ $tag['category_id'] }}">
-                        {{ $tag['name'] }}
-                    </span>
-                @endforeach
+              @foreach($tags as $tag)
+                <span class="tag-chip bg-white rounded-5 px-2 py-0" data-category-id="{{ $tag['category_id'] }}">
+                  {{ $tag['name'] }}
+                </span>
+              @endforeach
             </div>
-        </div>
+          </div>
 
-        <div class="container-fluid px-0">
+        <div class="container-fluid px-0 pt-3">
             <div class="swiper mySwiper">
                 <div class="swiper-wrapper">
                     @foreach($projects as $project)
@@ -90,7 +92,7 @@ $projects = [
                                 @endif
 
                                 <div class="row">
-                                    <div class="col-10 d-flex flex-wrap align-items-center px-2">
+                                    <div class="col-12 d-flex flex-wrap align-items-center px-2">
                                         @foreach($project['tags'] as $tag)
                                             <span class="badge bg-lgrey text-black fs-xsmall ms-1">{{ $tag['name'] }}</span>
                                         @endforeach

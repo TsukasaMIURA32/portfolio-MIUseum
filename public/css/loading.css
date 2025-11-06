@@ -12,7 +12,7 @@
   background-color: #2C2E43;
   z-index: 9999;
   overflow: hidden;
-  transition: opacity 0.6s ease; /* フェード時間短縮 */
+  transition: opacity 0.3s ease; /* フェード時間短縮 */
 }
 
 .loading-screen.hide {

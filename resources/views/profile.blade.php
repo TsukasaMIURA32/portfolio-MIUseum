@@ -4,9 +4,9 @@
 @endpush
 
 {{-- <div class="cotainer m-0 p-0"> --}}
-    <div class="row mx-lg-5 align-items-center">
-        <div class="col-lg-5 order-2 order-lg-2">
-            <div class="terminal-window" data-link="/skilldetails">
+    <div class="row g-0 align-items-center justify-content-center mx-0">
+        <div class="col-lg-5 order-2 order-lg-1 px-0 mx-lg-auto">
+            <div class="terminal-window mx-0 w-100" data-link="/skilldetails">
                 <div class="terminal-header">
                     <span class="terminal-dot dot-red"></span>
                     <span class="terminal-dot dot-yellow"></span>
@@ -35,7 +35,7 @@
                 </div>
             </div>
 
-            <div class="terminal-window mt-4" data-link="/skilldetails">
+            <div class="terminal-window mt-4 mx-0 w-100" data-link="/skilldetails">
                 <div class="terminal-header">
                     <span class="terminal-dot dot-red"></span>
                     <span class="terminal-dot dot-yellow"></span>
@@ -72,8 +72,8 @@
             </div>
         </div>
 
-        <div class="col-lg-6 ms-auto order-1 order-lg-2">
-            <div class="terminal-window text-center" data-link="/profiledetails">
+        <div class="col-lg-6 order-1 order-lg-2 mx-lg-auto px-0">
+            <div class="terminal-window text-cente w-100 mx-0" data-link="/profiledetails">
                 <div class="terminal-header">
                     <span class="terminal-dot dot-red"></span>
                     <span class="terminal-dot dot-yellow"></span>
@@ -95,12 +95,13 @@
                         山梨県富士河口湖町出身。
                         大学事務、舞台エンタメ、カナダワーホリ、フィリピンIT留学など、いろいろなことにチャレンジしてしてきました。<br>
                         近年はエンジニアになりたい！とフロントエンドからバックエンドまで幅広く学びました。<br>
-                        現在はJava学習中！Javaシルバーとるぞー！！
+                        現在はJava学習中！
+                        休日はマイクラプログラミング教室で小学生にプログラミングを教えています<i class="fa-whiteboard fa-semibold fa-face-smile"></i>
                         
                         <ul class="list-unstyled">
                             <li class="mb-2">
-                                <strong>Blog:</strong> 
-                                <a href="" class="text-blue">https://</a>
+                                <strong>note:</strong> 
+                                <a href="" class="text-blue">https://note.com/tsukasa_mi302</a>
                             </li>
                             <li>
                                 <strong>Github:</strong> 

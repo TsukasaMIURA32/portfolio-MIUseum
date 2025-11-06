@@ -14,7 +14,7 @@
     <img src="{{ asset('images/rocket.png') }}" alt="宇宙船" class="anim-spaceship">
     <img src="{{ asset('images/pink-star.png') }}" alt="星" class="anim-star pink">
     <img src="{{ asset('images/yellow-star.png') }}" alt="星" class="anim-star yellow">
-    <img src="{{ asset('images/explore.png') }}" alt="explore" class="anim-explore">
+    <img src="{{ asset('images/GO! EXPLORE!.svg') }}" alt="explore" class="anim-explore">
 </div>
 <!-- ヒーロー -->
         <div class="container-fluid">     
@@ -36,7 +36,7 @@
                 
                  <!-- Custom line numbers for this section -->
                  <!-- Section 1 の数字部分 -->
-                <div class="number text-lgrey text-end d-flex flex-column justify-content-between h-100  pt-5">
+                <div class="number text-lgrey text-end d-flex flex-column justify-content-between h-100 pt-5">
                     @for ($i = 1; $i <= 50; $i++)
                         <div>{{ $i }}</div>
                     @endfor
@@ -45,7 +45,7 @@
                 <div class="text-center w-100">
                 
                     <div class="typing-wrapper">
-                        <h1 class="typing">
+                        <h1 class="typing w-100">
                             <span class="text-white">
                               <span class="text-pink">let</span> name 
                               <span class="text-magenta">=</span> 
@@ -65,14 +65,14 @@
             </section>
             
             <!-- Section 2 -->
-            <section id="section2" class="vh-auto d-flex align-items-center justify-content-center">
+            <section id="section2" class="d-flex align-items-center justify-content-center">
                 {{-- <div class="text-center"> --}}
                     @include('profile')
                 {{-- </div> --}}
             </section>
             
             <!-- Section 3 -->
-            <section id="section3" class="my-4 d-flex align-items-center justify-content-center">
+            <section id="section3" class="my-5 py-lg-5 d-flex align-items-center justify-content-center">
                 {{-- <div class="text-center"> --}}
                     <!-- Projects -->
                     @include('projects-partial')
@@ -80,11 +80,9 @@
             </section>
             
             <!-- Section 4 -->
-            {{-- <section id="section4" class="vh-100 d-flex align-items-center justify-content-center">
-                <div class="text-center">
-                @include('terminal')
-                </div>
-            </section> --}}
+            <section id="section4" class="my-5 py-lg-5 d-flex justify-content-center text-center">
+                @include('contact')
+            </section>
         </div>
     
     <script src="{{ asset('js/loading.js') }}"></script>
