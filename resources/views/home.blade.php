@@ -45,7 +45,7 @@
                 <div class="text-center w-100">
                 
                     <div class="typing-wrapper">
-                        <h1 class="typing w-100">
+                        <h1 class="typing">
                             <span class="text-white">
                               <span class="text-pink">let</span> name 
                               <span class="text-magenta">=</span> 

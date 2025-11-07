@@ -187,8 +187,8 @@ background-color: #D8D7DA;
   overflow: hidden;
   display: inline-block;
   border-right: 3px solid #fff; /* カーソル */
-  animation: typing 2.5s steps(var(--steps), end) forwards 1.8s, blink 0.8s step-end infinite;
-  --steps: 24;
+  animation: typing 2.5s steps(24, end) forwards 1.8s, blink 0.8s step-end infinite;
+
 }
   
   /* タイピングアニメーション */
