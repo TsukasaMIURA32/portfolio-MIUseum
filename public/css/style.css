@@ -88,12 +88,20 @@ background-color: #D8D7DA;
     background-color: #3e3954;
 }
 
-  .navbar-nav li{
-    font-size: 1rem;
-    border-right: 1px solid #484848;
-    border-left: 1px solid #484848;
-    width: 15vw;
+.navbar-nav li {
+  font-size: 1rem;
+  border-right: 1px solid #484848;
+  border-left: 1px solid #484848;
+  width: 15vw;
+}
+
+@media (max-width: 992px) { /* ハンバーガーに切り替わる幅 */
+  .navbar-nav li {
+    width: 100%;
+    border: none; /* ← ボーダーも外す */
+    text-align: center; /* ← 見た目も整う */
   }
+}
 
   .form-control-sm{
     background-color: #f7f7f7;
