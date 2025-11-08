@@ -15,6 +15,19 @@ document.addEventListener("DOMContentLoaded", () => {
     }, { threshold: 0.5 });
   
     bars.forEach(bar => observer.observe(bar));
+
+      // カードクリックで遷移
+    document.querySelectorAll('.terminal-window[data-link]').forEach(card => {
+      card.addEventListener('click', e => {
+        const link = card.dataset.link;
+        if (link) window.location.href = link;
+      });
+    });
+
+    // 内部リンクはカードクリックを無効化
+    document.querySelectorAll('.link-inside').forEach(link => {
+      link.addEventListener('click', e => e.stopPropagation());
+    });
   });
 
   document.querySelectorAll('.terminal-window').forEach(win => {

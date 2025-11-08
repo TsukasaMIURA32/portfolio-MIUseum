@@ -24,7 +24,7 @@
     <!-- ナビバー -->
     <nav class="navbar navbar-expand-lg navbar-dark fixed-top py-0">
         <div class="container-fluid px-3 mx-0 bg-navbar ">
-            <a class="navbar-brand fw-bold text-lgrey" href="{{ url('/') }}">
+            <a class="navbar-brand fw-bold text-lgrey" href="http://miura-portfolio-c28a5dc47354.herokuapp.com/">
                 <img src="{{ asset('images/logo.png') }}" alt="logo" class="img-md">
             </a>
             
