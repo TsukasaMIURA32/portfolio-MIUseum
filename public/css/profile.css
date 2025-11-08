@@ -188,6 +188,7 @@
 .fa-github {
   color: #D9D9D9;
   transition: transform 0.3s ease, color 0.3s ease;
+  height: 20%;
 }
 
 /* リンク干渉回避（カード全体クリックを無効化しない） */

@@ -112,6 +112,7 @@ background-color: #D8D7DA;
 .img-sm{
     height:2rem;
     width:2rem;
+    font-size: 2rem;
     object-fit:cover;
 }
 

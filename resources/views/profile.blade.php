@@ -109,7 +109,7 @@
                         近年はエンジニアになりたい！とフロントエンドからバックエンドまで幅広く学びました。<br>
                         現在はJava学習中！休日はマイクラプログラミング教室で小学生にプログラミングを教えています。🧩
             
-                        <div class="d-flex gap-3 mt-3">
+                        <div class="d-flex mt-3 text-center align-items-center">
                             {{-- note --}}
                             <a href="https://note.com/tsukasa_mi302" target="_blank" class="link-inside">
                                 <img src="{{ asset('images/square.png') }}" alt="note" class="social-icon">
@@ -117,7 +117,7 @@
             
                             {{-- GitHub --}}
                             <a href="https://github.com/TsukasaMIURA32" target="_blank" class="link-inside text-lgrey">
-                                <i class="fa-brands fa-github fa-xl"></i>
+                                <i class="fa-brands fa-github "></i>
                             </a>
                         </div>
                     </div>
