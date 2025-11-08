@@ -1,97 +1,95 @@
-.universe-container {
-    background: radial-gradient(circle at 20% 20%, #1d2030, #0a0a15);
-    color: #fff;
-    overflow-x: hidden;
-  }
-  
-  /* ===== タイムライン軸 ===== */
-  .space-timeline {
-    position: relative;
-    width: 100%;
-    margin: 0 auto;
-    padding: 4rem 0;
-  }
-  
-  .timeline-line {
-    position: absolute;
-    top: 0;
-    left: 50%;
-    width: 4px;
-    height: 100%;
-    background: linear-gradient(to bottom, #fff3, #ffd6f5, #fff3);
-    transform: translateX(-50%);
-  }
-  
-  /* ===== 各ステーション（惑星） ===== */
-  .timeline-item {
-    position: relative;
-    width: 50%;
-    padding: 2rem;
-  }
-  
-  .timeline-item.left {
-    left: 0;
-    text-align: right;
-  }
-  
-  .timeline-item.right {
-    left: 50%;
-    text-align: left;
-  }
-  
-  .planet-card {
-    position: relative;
-    display: inline-block;
-    background: rgba(255,255,255,0.08);
-    border-radius: 16px;
-    padding: 1.5rem;
-    max-width: 40vw;
-    box-shadow: 0 0 20px rgba(255,255,255,0.15);
-    transition: transform 0.3s;
-  }
+.space-timeline {
+  position: relative;
+  width: 100%;
+  margin: 0 auto;
+  padding: 2rem 0;
+}
 
-  /* === カードタイプ別カラー === */
-.career-card {
-    background: linear-gradient(135deg, rgba(79,195,247,0.2), rgba(179,229,252,0.1));
-    border-left: 4px solid #4fc3f7;
-    box-shadow: 0 0 15px rgba(79,195,247,0.3);
+.timeline-line {
+  position: absolute;
+  left: 50%;
+  top: 0;
+  bottom: 0;
+  width: 3px;
+  background: linear-gradient(180deg, #FEB1AF, #BBB3DF, #73B0E8);
+  transform: translateX(-50%);
+  opacity: 0.3;
+  z-index: 0;
+}
+
+/* 🪐 全カード共通：中央一列表示 */
+.timeline-item {
+  position: relative;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  margin: 3rem 0;
+  z-index: 2;
+}
+
+/* カード本体 */
+.planet-card {
+  position: relative;
+  width: 70%; /* ✅ カードの幅は70%固定 */
+  background: rgba(255, 255, 255, 0.05);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  border-radius: 20px;
+  padding: 1.5rem;
+  color: #f8f9fa;
+  box-shadow: 0 0 15px rgba(255,255,255,0.1);
+  backdrop-filter: blur(8px);
+  transition: all 0.3s ease;
+}
+
+.planet-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 0 25px rgba(255,255,255,0.3);
+}
+
+/* 惑星アイコン（写真 or グラデーション円） */
+.planet-icon {
+  width: 90px;
+  height: 90px;
+  border-radius: 50%;
+  overflow: hidden;
+  margin: 0 auto 1rem auto;
+  box-shadow: 0 0 10px rgba(255,255,255,0.3);
+}
+
+/* 最後のまとめカード */
+.final-card {
+  background: linear-gradient(135deg, #BBB3DF, #FEB1AF);
+  border: none;
+  color: #fff;
+  padding: 2rem;
+}
+
+/* スマホ */
+@media (max-width: 768px) {
+  .planet-card {
+    width: 90%;
   }
-  
-  .private-card {
-    background: linear-gradient(135deg, rgba(255,213,79,0.2), rgba(255,245,157,0.1));
-    border-left: 4px solid #ffd54f;
-    box-shadow: 0 0 15px rgba(255,213,79,0.3);
-  }
-  
-  
-  .planet-card:hover {
-    transform: scale(1.05);
-  }
-  
-  .planet-icon {
-    width: 40px;
-    height: 40px;
-    border-radius: 50%;
-    position: absolute;
-    top: 20px;
-    right: -20px;
-    box-shadow: 0 0 20px currentColor;
-  }
-  
-  .planet-pink { background: linear-gradient(135deg, #f59ed6, #ffb6c1); color: #f59ed6; }
-  .planet-yellow { background: linear-gradient(135deg, #ffe28a, #ffd166); color: #ffe28a; }
-  .planet-blue { background: linear-gradient(135deg, #87cefa, #4da6ff); color: #87cefa; }
-  
-  /* ===== レスポンシブ ===== */
-  @media (max-width: 768px) {
-    .timeline-item, .timeline-item.left, .timeline-item.right {
-      width: 100%;
-      text-align: center;
-      left: 0;
-    }
-    .timeline-line { left: 5%; }
-    .planet-card {
-      margin: 0 auto 2rem;
-    }
-  }
-  
+}
+.planet-icon {
+  width: 90px;
+  height: 90px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 0 10px rgba(255,255,255,0.3);
+}
+
+/* 惑星カラー背景 */
+.planet-pink {
+  background: radial-gradient(circle at top left, #FEB1AF, #D17BAA);
+}
+.planet-blue {
+  background: radial-gradient(circle at bottom right, #AAD2E8, #5A9BD8);
+}
+.planet-yellow {
+  background: radial-gradient(circle at top right, #FFDD83, #D1B457);
+}
+.planet-purple {
+  background: radial-gradient(circle at bottom left, #BBB3DF, #7E70C7);
+}
