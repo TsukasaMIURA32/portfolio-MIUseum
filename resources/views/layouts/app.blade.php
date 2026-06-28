@@ -9,7 +9,7 @@
     <script src="https://kit.fontawesome.com/61c51be218.js" crossorigin="anonymous"></script>
 
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
-    <link rel="stylesheet" href="{{ asset('css/style.css') }}">
+    <link rel="stylesheet" href="{{ secure_asset('css/style.css') }}">
     @stack('styles')
     <meta name="csrf-token" content="{{ csrf_token() }}">
     
@@ -25,7 +25,7 @@
     <nav class="navbar navbar-expand-lg navbar-dark fixed-top py-0">
         <div class="container-fluid px-3 mx-0 bg-navbar ">
             <a class="navbar-brand fw-bold text-lgrey" href="{{ url('/') }}">
-                <img src="{{ asset('images/logo.png') }}" alt="logo" class="img-md">
+                <img src="{{ sefure_asset('images/logo.png') }}" alt="logo" class="img-md">
             </a>
             
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse" 

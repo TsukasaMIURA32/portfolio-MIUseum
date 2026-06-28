@@ -3,7 +3,7 @@
 @section('title', "Tsukasa Miura's portfprio")
 
 @push('styles')
-<link rel="stylesheet" href="{{ asset('css/loading.css') }}">
+<link rel="stylesheet" href="{{ secure_asset('css/loading.css') }}">
 
 @endpush
 
