@@ -2,7 +2,7 @@
 @section('title', "Skill Galaxy | MIUseum")
 
 @push('styles')
-<link rel="stylesheet" href="{{ asset('css/skills.css') }}">
+<link rel="stylesheet" href="{{ secure_asset('css/skills.css') }}">
 @endpush
 
 @section('content')
@@ -33,6 +33,6 @@
 </div>
 
 <script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.1/dist/chart.umd.min.js"></script>
-<script src="{{ asset('js/skills.js') }}"></script>
+<script src="{{ secure_asset('js/skills.js') }}"></script>
 @endsection
 

@@ -60,7 +60,7 @@
                     ちょっとワクワクするような、世界観を大切にした制作を心がけています。<br>
                     詳しい経歴やスキルは、PROFILEからチェックしてください。*/
                     </p>
-                    <img src="{{asset('images/down.png')}}" alt="" class="img-down" id="scroll-down">
+                    <img src="{{secure_asset('images/down.png')}}" alt="" class="img-down" id="scroll-down">
                 </div> 
             </section>
             
@@ -85,7 +85,7 @@
             </section>
         </div>
     
-    <script src="{{ asset('js/loading.js') }}"></script>
+    <script src="{{ secure_asset('js/loading.js') }}"></script>
 @endsection
     
 

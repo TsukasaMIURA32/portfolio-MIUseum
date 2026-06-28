@@ -1,5 +1,5 @@
 @push('styles')
-<link rel="stylesheet" href="{{ asset('css/card.css') }}">
+<link rel="stylesheet" href="{{ secure_asset('css/card.css') }}">
 @endpush
 
 <div class="container-fluid">
@@ -34,7 +34,7 @@
                                 </div>
 
                                 @if($project->main_image)
-                                <img src="{{ asset($project->main_image) }}" class="img-fluid" alt="{{ $project->title }}">
+                                <img src="{{ secure_asset($project->main_image) }}" class="img-fluid" alt="{{ $project->title }}">
                                 @endif
 
                                 <div class="row">
@@ -62,5 +62,5 @@
     </div>
 </div>
 
-<script src="{{ asset('js/project.js') }}"></script>
+<script src="{{ secure_asset('js/project.js') }}"></script>
 @include('projects.project-modal')

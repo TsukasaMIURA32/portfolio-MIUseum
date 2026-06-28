@@ -2,7 +2,7 @@
 @section('title', "Profile Journey | MIUseum")
 
 @push('styles')
-<link rel="stylesheet" href="{{ asset('css/profiledetails.css') }}">
+<link rel="stylesheet" href="{{ secure_asset('css/profiledetails.css') }}">
 @endpush
 
 @section('content')
@@ -19,7 +19,7 @@
     <div class="timeline-item" data-aos="fade-up">
       <div class="planet-card">
         <div class="planet-icon planet-yellow">
-          <img src="{{ asset('images/1990_child.jpg') }}" alt="baby" class="img-fluid rounded-circle">
+          <img src="{{ secure_asset('images/1990_child.jpg') }}" alt="baby" class="img-fluid rounded-circle">
         </div>
         <h3>1990年10月　山梨県富士河口湖町で誕生</h3>
         <p>
@@ -33,7 +33,7 @@
     <div class="timeline-item" data-aos="fade-up">
       <div class="planet-card">
         <div class="planet-icon planet-blue">
-          <img src="{{ asset('images/1995_yokohama.jpg') }}" alt="yokohama" class="img-fluid rounded-circle">
+          <img src="{{ secure_asset('images/1995_yokohama.jpg') }}" alt="yokohama" class="img-fluid rounded-circle">
         </div>
         <h3>1995〜2000年　父親の転勤で横浜市在住</h3>
         <p>
@@ -47,7 +47,7 @@
     <div class="timeline-item" data-aos="fade-up">
       <div class="planet-card">
         <div class="planet-icon planet-pink">
-          <img src="{{ asset('images/2000_village.jpg') }}" alt="village" class="img-fluid rounded-circle">
+          <img src="{{ secure_asset('images/2000_village.jpg') }}" alt="village" class="img-fluid rounded-circle">
         </div>
         <h3>2000〜2006年　地元に戻る</h3>
         <p>
@@ -76,7 +76,7 @@
     <div class="timeline-item" data-aos="fade-up">
       <div class="planet-card">
         <div class="planet-icon planet-blue">
-          <img src="{{ asset('images/2009_university.jpg') }}" alt="university" class="img-fluid rounded-circle">
+          <img src="{{ secure_asset('images/2009_university.jpg') }}" alt="university" class="img-fluid rounded-circle">
         </div>
         <h3>2009〜2013年　東京の西の方で大学生活</h3>
         <p>
@@ -104,7 +104,7 @@
     <div class="timeline-item" data-aos="fade-up">
       <div class="planet-card">
         <div class="planet-icon planet-yellow">
-          <img src="{{ asset('images/2015_office.jpg') }}" alt="office" class="img-fluid rounded-circle">
+          <img src="{{ secure_asset('images/2015_office.jpg') }}" alt="office" class="img-fluid rounded-circle">
         </div>
         <h3>2015〜2017年　別大学で大学事務</h3>
         <p>
@@ -118,7 +118,7 @@
     <div class="timeline-item" data-aos="fade-up">
       <div class="planet-card">
         <div class="planet-icon planet-blue">
-          <img src="{{ asset('images/2017_cebustudy.jpg') }}" alt="cebu" class="img-fluid rounded-circle">
+          <img src="{{ secure_asset('images/2017_cebustudy.jpg') }}" alt="cebu" class="img-fluid rounded-circle">
         </div>
         <h3>2017年　セブ留学へ</h3>
         <p>
@@ -132,7 +132,7 @@
     <div class="timeline-item" data-aos="fade-up">
       <div class="planet-card">
         <div class="planet-icon planet-pink">
-          <img src="{{ asset('images/2018_canada.jpg') }}" alt="canada" class="img-fluid rounded-circle">
+          <img src="{{ secure_asset('images/2018_canada.jpg') }}" alt="canada" class="img-fluid rounded-circle">
         </div>
         <h3>2018〜2019年　カナダワーホリ</h3>
         <p>
@@ -147,7 +147,7 @@
     <div class="timeline-item" data-aos="fade-up">
       <div class="planet-card">
         <div class="planet-icon planet-yellow">
-          <img src="{{ asset('images/2019_stage.jpg') }}" alt="stage" class="img-fluid rounded-circle">
+          <img src="{{ secure_asset('images/2019_stage.jpg') }}" alt="stage" class="img-fluid rounded-circle">
         </div>
         <h3>2019〜2020年　舞台制作の仕事に挑戦</h3>
         <p>
@@ -161,7 +161,7 @@
     <div class="timeline-item" data-aos="fade-up">
       <div class="planet-card">
         <div class="planet-icon planet-blue">
-          <img src="{{ asset('images/2020_designstudy.png') }}" alt="design" class="img-fluid rounded-circle">
+          <img src="{{ secure_asset('images/2020_designstudy.png') }}" alt="design" class="img-fluid rounded-circle">
         </div>
         <h3>2020〜2022年　デザインとHP制作の勉強</h3>
         <p>
@@ -190,7 +190,7 @@
     <div class="timeline-item" data-aos="fade-up">
       <div class="planet-card">
         <div class="planet-icon planet-yellow">
-          <img src="{{ asset('images/2024_kredo.jpg') }}" alt="kredo" class="img-fluid rounded-circle">
+          <img src="{{ secure_asset('images/2024_kredo.jpg') }}" alt="kredo" class="img-fluid rounded-circle">
         </div>
         <h3>2024〜2025年　Kredo IT留学 in セブ</h3>
         <p>

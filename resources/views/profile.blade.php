@@ -1,5 +1,5 @@
 @push('styles')
-<link rel="stylesheet" href="{{ asset('css/profile.css') }}">
+<link rel="stylesheet" href="{{ secure_asset('css/profile.css') }}">
 
 @endpush
 
@@ -99,7 +99,7 @@
                             <h3 class="mb-3 text-lgrey ms-5 ps-2">つかさ</h3>
                         </div>
                         <div class="col">
-                            <img src="{{ asset('images/profile.png') }}" alt="Tsukasa Miura" class="profile-image mb-4 rounded-circle">
+                            <img src="{{ secure_asset('images/profile.png') }}" alt="Tsukasa Miura" class="profile-image mb-4 rounded-circle">
                         </div>
                     </div>
                     
@@ -112,7 +112,7 @@
                         <div class="d-flex mt-3 text-center align-items-center">
                             {{-- note --}}
                             <a href="https://note.com/tsukasa_mi302" target="_blank" class="link-inside">
-                                <img src="{{ asset('images/square.png') }}" alt="note" class="social-icon">
+                                <img src="{{ secure_asset('images/square.png') }}" alt="note" class="social-icon">
                             </a>
             
                             {{-- GitHub --}}
@@ -127,4 +127,4 @@
     </div>
 {{-- </div> --}}
 
-<script src="{{ asset('js/profile.js') }}"></script>
+<script src="{{ secure_asset('js/profile.js') }}"></script>
