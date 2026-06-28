@@ -26,12 +26,11 @@
               <div class="col-md-9">
                 <p class="m-0">
                   Share your journey, connect with the world.<br>
-                  旅の軌跡をクエストとして残し、仲間とつながる。旅行者とビジネスが共に広がる、新しい旅の形です。<br>
+                  旅行者とビジネスが共に広がる、新しい旅の形です。<br>
                   (Kredo IT留学にてチームで制作したウェブアプリケーションです。）<br>
                   ログインしていただくと詳細な機能がお試しいただけます。<br>
                   一般ユーザー：ID - bob@example.com, PASS - password<br>
-                  企業ユーザー：ID - grace@example.com, PASS - password<br>
-                  管理ユーザー：ID - admin@example.com, PASS - password<br>
+      
                 </p>
               </div>
   

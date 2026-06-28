@@ -2,14 +2,22 @@
 
 namespace App\Http\Controllers;
 
-use Illuminate\Http\Request;
+use App\Models\Project;
+use App\Models\Tag;
 
 class HomeController extends Controller
 {
     public function index()
     {
-        // もうデータベースから取らない
-        return view('home');
+        $projects = Project::with(['tags', 'details' => function ($query) {
+                $query->orderBy('order');
+            }])
+            ->orderByDesc('date')
+            ->orderByDesc('id')
+            ->get();
+
+        $tags = Tag::orderBy('category_id')->orderBy('id')->get();
+
+        return view('home', compact('projects', 'tags'));
     }
 }
-
