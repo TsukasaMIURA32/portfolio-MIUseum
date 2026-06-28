@@ -25,7 +25,7 @@
     <nav class="navbar navbar-expand-lg navbar-dark fixed-top py-0">
         <div class="container-fluid px-3 mx-0 bg-navbar ">
             <a class="navbar-brand fw-bold text-lgrey" href="{{ url('/') }}">
-                <img src="{{ sefure_asset('images/logo.png') }}" alt="logo" class="img-md">
+                <img src="{{ secure_asset('images/logo.png') }}" alt="logo" class="img-md">
             </a>
             
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse" 
